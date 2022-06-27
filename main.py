@@ -48,6 +48,19 @@ def process_coins():
     total += int(input('How many quarters: ')) * 0.01
     return total
 
+def is_transaction_successful(money_received, dring_cost):
+    """Return True when the payment is accepted, or False if the money is
+    insufficient"""
+    if money_received >= dring_cost:
+        change = round(money_received - dring_cost, 2)
+        print(f"Here is ${change} balance")
+        global profit
+        profit += dring_cost
+        return True
+    else:
+        print('Sorry that is not enough money. Money refunded')
+        return False
+
 is_on = True
 
 while is_on:
