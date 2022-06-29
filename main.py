@@ -51,14 +51,14 @@ def process_coins():
     return total
 
 
-def is_transaction_successful(money_received, dring_cost):
+def is_transaction_successful(money_received, drink_cost):
     """Return True when the payment is accepted, or False if the money is
     insufficient"""
-    if money_received >= dring_cost:
-        change = round(money_received - dring_cost, 2)
+    if money_received >= drink_cost:
+        change = round(money_received - drink_cost, 2)
         print(f"Here is ${change} balance")
         global profit
-        profit += dring_cost
+        profit += drink_cost
         return True
     else:
         print('Sorry that is not enough money. Money refunded')
